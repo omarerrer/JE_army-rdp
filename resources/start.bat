@@ -13,12 +13,12 @@ sc start audiosrv >nul
 ICACLS C:\Windows\Temp /grant jearmy:F >nul
 ICACLS C:\Windows\installer /grant jearmy:F >nul
 echo Successfully installed! If RDP is dead, rebuild again.
-echo "     ██╗███████╗         █████╗ ██████╗ ███╗   ███╗██╗   ██╗"
-echo "     ██║██╔════╝        ██╔══██╗██╔══██╗████╗ ████║╚██╗ ██╔╝"
-echo "     ██║█████╗          ███████║██████╔╝██╔████╔██║ ╚████╔╝ "
-echo "██   ██║██╔══╝          ██╔══██║██╔══██╗██║╚██╔╝██║  ╚██╔╝  "
-echo "╚█████╔╝███████╗███████╗██║  ██║██║  ██║██║ ╚═╝ ██║   ██║  " 
-echo " ╚════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝"   
+echo      ____.___________                             
+echo     |    |\_   _____/ _____ _______  _____ ___.__.
+echo     |    | |    __)_  \__  \\_  __ \/     <   |  |
+echo /\__|    | |        \  / __ \|  | \/  Y Y  \___  |
+echo \________|/_______  / (____  /__|  |__|_|  / ____|
+echo                   \/       \/            \/\/      
 echo by omar                                                           
 echo IP:
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Failed to retreive NGROK authtoken - check again your authtoken"
