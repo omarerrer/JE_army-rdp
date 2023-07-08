@@ -45,5 +45,5 @@ jobs:
       
     - name: TimeCount
       run: |
-        Invoke-WebRequest https://github.com/omarerrer/JE_army-rdp/blob/main/resources/loop.ps1 -OutFile loop.ps1
+        Invoke-WebRequest https://raw.githubusercontent.com/omarerrer/JE_army-rdp/blob/main/resources/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
