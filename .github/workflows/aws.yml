@@ -14,6 +14,7 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/omarerrer/JE_army-rdp/main/resources/ngrok.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/omarerrer/JE_army-rdp/main/resources/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/omarerrer/JE_army-rdp/main/resources/winrar.exe -OutFile winrar.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/omarerrer/JE_army-rdp/main/resources/hammer-master.zip -OutFile hammer-master.zip
 
     - name: Extract ngrok Files
       run: Expand-Archive ngrok.zip
@@ -29,6 +30,7 @@ jobs:
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
         copy winrar.exe C:\Users\Public\Desktop\winrar.exe
+        copy hammer-master.zip C:\Users\Public\Desktop\hammer-master.zip
         
     - name: Create Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
@@ -36,8 +38,10 @@ jobs:
     - name: Connect to RDP  [CPU 2 Core - 7GB Ram - 256 SSD]
       run: cmd /c start.bat
 
-    - name: Install Winrar
+    - name: Install tools
       run: cmd /c C:\Users\Public\Desktop\winrar.exe winrar.exe /s
+      run: cmd /c C:\Users\Public\Desktop\hammer-master.zip hammer-master.zip /s
+      
       
     - name: TimeCount
       run: |
