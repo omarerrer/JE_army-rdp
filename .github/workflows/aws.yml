@@ -39,8 +39,9 @@ jobs:
       run: cmd /c start.bat
 
     - name: Install tools
-      run: cmd /c C:\Users\Public\Desktop\winrar.exe winrar.exe /s
-      run: cmd /c C:\Users\Public\Desktop\hammer-master.zip hammer-master.zip /s
+      run: |
+       cmd /c C:\Users\Public\Desktop\winrar.exe winrar.exe /s
+       cmd /c C:\Users\Public\Desktop\hammer-master.zip hammer-master.zip /s
       
       
     - name: TimeCount
